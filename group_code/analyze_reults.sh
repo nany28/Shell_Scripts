@@ -37,7 +37,7 @@ cat pt_all.dat | awk '{ printf("%2.10f %2.10f %2.10f %2.11f %2.10f\n",$1,$2*-1, 
 # Combine values into graph.dat 
 paste  eps_var.dat pos_del.dat  tot_ene.dat >> graph.dat
 #tail -1 graph.dat >> ../extrapol.dat
-tail -1 tot_ene.dat | awk '{ printf("%.10f %.10f\n",($2-$1)*219474.6,($4-$1)*219474.26)  }' >> bend_stretch.dat
+tail -1 tot_ene.dat | awk '{ printf("%.10f %.10f\n",($2-$1)*219474.26,($4-$1)*219474.26)  }' >> bend_stretch.dat
 echo " bend and stretch values after perturbative part" >> final.dat
 cat bend_stretch.dat >> final.dat
 
